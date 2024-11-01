@@ -1,15 +1,16 @@
 // Data Transter Object
-import HomeIcon from "@/assets/images/investor/dashboard/icons/home-icon.svg";
-import ShieldOutlineIcon from "@/assets/images/investor/dashboard/icons/shield-outline-icon.svg";
-import DocIcon from "@/assets/images/investor/dashboard/icons/doc-icon.svg";
-import ClipboardIcon from "@/assets/images/investor/dashboard/icons/clipboard-icon.svg";
-import HeadsetIcon from "@/assets/images/investor/dashboard/icons/headset-icon.svg";
-import BadgeIcon from "@/assets/images/investor/dashboard/icons/badge-icon.svg";
-import HistoryIcon from "@/assets/images/investor/dashboard/icons/history-icon.svg";
-import SettingsIcon from "@/assets/images/investor/dashboard/icons/settings-icon.svg";
+import HomeIcon from "@/assets/images/icons/home-icon.svg";
+import ShieldOutlineIcon from "@/assets/images/icons/shield-outline-icon.svg";
+import DocIcon from "@/assets/images/icons/doc-icon.svg";
+import ClipboardIcon from "@/assets/images/icons/clipboard-icon.svg";
+import HeadsetIcon from "@/assets/images/icons/headset-icon.svg";
+import BadgeIcon from "@/assets/images/icons/badge-icon.svg";
+import HistoryIcon from "@/assets/images/icons/history-icon.svg";
+import SettingsIcon from "@/assets/images/icons/settings-icon.svg";
 import { GeneralNonAuthRoutes } from "@/utils/urls";
+import { AppRouterInstance } from "next/dist/shared/lib/app-router-context.shared-runtime";
 
-export const dashboardSidebar = (Router) => [
+export const dashboardSidebar = (Router: AppRouterInstance) => [
   {
     Icon: HomeIcon,
     text: "Home",

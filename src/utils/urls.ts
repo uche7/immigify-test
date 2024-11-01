@@ -1,14 +1,14 @@
 
 /** General Page Unauthenticated Routes or URL Page Links */
 const GeneralNonAuthRoutes = {
-	home: "/home",
-    EligibilityAgent: "/eligibility-agent",
-    DocumentAgent: "/document-agent",
-    FormFillingAgent: "/form-filling-agent",
-    InterviewPrepAgent: "/interview-prep-agent",
-    Subscription: "/subscription",
-    History: "/history",
-    Settings: "/settings",
+	home: "/",
+    EligibilityAgent: "/",
+    DocumentAgent: "/",
+    FormFillingAgent: "/",
+    InterviewPrepAgent: "/",
+    Subscription: "/",
+    History: "/",
+    Settings: "/",
 
 };
 

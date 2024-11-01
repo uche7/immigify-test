@@ -1,9 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
-import Image from "next/image";
-import { useRouter } from "next/navigation";
-import SefarvestIcon from "@/assets/images/general/landing-page/sefarvest-icon.svg";
-import { GeneralNonAuthRoutes } from "@/utils/urls";
 import { SidebarList } from "./sidebar-list";
+import ProgressBar from "./progress-bar";
 
 /** Dashboard SideBar */
 export const Sidebar = ({
@@ -13,7 +10,6 @@ export const Sidebar = ({
   openMenu: boolean;
   setOpenMenu: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
-  const router = useRouter();
   const [isOpen, setIsOpen] = useState(true);
   const sidebarRef = useRef<HTMLDivElement>(null);
 
@@ -41,22 +37,18 @@ export const Sidebar = ({
     return (
       <div
         className={`min-h-screen ${
-          isOpen ? "w-[260px]" : "w-20"
-        } TabletScreen:hidden MobileScreen:hidden transition-all duration-300 border-r-[1px] border-[#E4E7EC]`}
+          isOpen ? "w-[282px]" : "w-20"
+        } TabletScreen:hidden MobileScreen:hidden transition-all duration-300`}
       >
-        <div className="relative flex items-center justify-between p-[40px]">
-          <Image
-            className={`text-xl cursor-pointer text-green-600 ${
-              !isOpen && "hidden md:block"
-            }`}
-            src={SefarvestIcon}
-            alt={"Sefarvest Icon"}
-            onClick={() => router.push(GeneralNonAuthRoutes.home)}
-          />
-        </div>
-        <aside className="mt-[65.43px]" onClick={() => setIsOpen(true)}>
+        <aside className="pt-[45px] mb-2" onClick={() => setIsOpen(true)}>
           <SidebarList isOpen={isOpen} />
         </aside>
+        <div className="ml-6">
+          <strong className="font-[600] text-[14px] leading-[21px]">
+            Not strong
+          </strong>
+          <ProgressBar progress={25} label="25" />
+        </div>
       </div>
     );
   };
@@ -68,19 +60,18 @@ export const Sidebar = ({
         {openMenu && (
           <div
             ref={sidebarRef}
-            className="min-h-screen w-[260px] z-[2000] absolute bg-white DesktopScreen:hidden  transition-all duration-300 border-r-[1px] border-[#E4E7EC]"
+            className="min-h-screen w-[260px] z-[2000] absolute bg-white DesktopScreen:hidden 
+            overflow-auto transition-all duration-300 border-r-[1px] border-[#E4E7EC]"
           >
-            <div className="relative flex flex-col p-[40px]">
-              <Image
-                className="text-xl cursor-pointer text-green-600"
-                src={SefarvestIcon}
-                alt={"Sefarvest Icon"}
-                onClick={() => router.push(GeneralNonAuthRoutes.home)}
-              />
-            </div>
-            <aside className="mt-[65.43px]">
+            <aside className="mt-4">
               <SidebarList />
             </aside>
+            <div className="ml-6 mb-2">
+              <strong className="font-[600] text-[14px] leading-[21px]">
+                Not strong
+              </strong>
+              <ProgressBar progress={25} label="25" />
+            </div>
           </div>
         )}
       </>

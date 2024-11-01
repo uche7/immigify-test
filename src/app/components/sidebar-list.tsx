@@ -21,7 +21,7 @@ export const SidebarList = ({ isOpen }: { isOpen?: unknown }) => {
         {investorSidebarData.map((item, index) => (
           <div
             key={index}
-            className={`flex items-center p-2 mt-2 mx-[16px] TabletScreen:hidden MobileScreen:hidden rounded-md cursor-pointer ${
+            className={`flex items-center p-2 mt-2 mx-[16px] TabletScreen:hidden MobileScreen:hidden cursor-pointer ${
               activeIndex === index
                 ? "border-r-[#000000] border-r-[2px]"
                 : "hover:border-r-[#000000] hover:border-r-[2px]"
@@ -29,14 +29,14 @@ export const SidebarList = ({ isOpen }: { isOpen?: unknown }) => {
             onClick={() => handleClick(index, item.route)}
           >
             <Image
-              className="hover:text-[#199B6C]"
+              className="hover:text-[#000000] w-[30px]"
               src={item.Icon}
               alt={item.text}
             />
             <span
               className={`ml-4 ${
                 !isOpen && "hidden"
-              } font-[400] hover:font-[500] text-[16px] leading-[19.09px] group-hover:block select-none`}
+              } font-[400] hover:font-[500] text-[#000000] text-[16px] leading-[24.01px] group-hover:block select-none`}
             >
               {item.text}
             </span>
@@ -53,7 +53,7 @@ export const SidebarList = ({ isOpen }: { isOpen?: unknown }) => {
         {investorSidebarData.map((item, index) => (
           <div
             key={index}
-            className={`flex items-center p-2 mt-2 mx-[16px] DesktopScreen:hidden MobileScreen:hidden rounded-md cursor-pointer ${
+            className={`flex items-center p-2 mt-2 mx-[16px] DesktopScreen:hidden MobileScreen:hidden cursor-pointer ${
               activeIndex === index
                 ? "border-r-[#000000] border-r-[2px]"
                 : "hover:border-r-[#000000] hover:border-r-[2px]"
@@ -61,7 +61,7 @@ export const SidebarList = ({ isOpen }: { isOpen?: unknown }) => {
             onClick={() => handleClick(index, item.route)}
           >
             <Image
-              className="hover:text-[#199B6C]"
+              className="hover:text-[#000000]"
               src={item.Icon}
               alt={item.text}
             ></Image>
@@ -81,7 +81,7 @@ export const SidebarList = ({ isOpen }: { isOpen?: unknown }) => {
         {investorSidebarData.map((item, index) => (
           <div
             key={index}
-            className={`flex items-center p-2 mt-2 mx-[16px] DesktopScreen:hidden TabletScreen:hidden rounded-md cursor-pointer ${
+            className={`flex items-center p-2 mt-2 mx-[16px] DesktopScreen:hidden TabletScreen:hidden cursor-pointer ${
               activeIndex === index
                 ? "border-r-[#000000] border-r-[2px]"
                 : "hover:border-r-[#000000] hover:border-r-[2px]"
@@ -89,7 +89,7 @@ export const SidebarList = ({ isOpen }: { isOpen?: unknown }) => {
             onClick={() => handleClick(index, item.route)}
           >
             <Image
-              className="hover:text-[#199B6C]"
+              className="hover:text-[#000000]"
               src={item.Icon}
               alt={item.text}
             ></Image>
