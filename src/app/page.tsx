@@ -7,35 +7,35 @@ import { NavigationBar } from "./components/navigation";
 
 export default function Home() {
   const [isOpen, setIsOpen] = useState(false);
-  // const [isLoading, setIsLoading] = useState(false);
-  // const [isError, setIsError] = useState(false);
-  // const [users, setUsers] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [isError, setIsError] = useState(false);
+  const [users, setUsers] = useState([]);
 
   const toggleSidebar = () => {
     setIsOpen(!isOpen);
   };
 
-  // const URL = `https://jsonplaceholder.typicode.com/users`;
+  const URL = `https://jsonplaceholder.typicode.com/users`;
 
-  // useEffect(() => {  
-  //   const fetchData = async () => {
-  //     try {
-  //       const response = await fetch(URL);
-  //       if (!response.ok) {
-  //         throw new Error("Failed to fetch data");
-  //       }
-  //       const data = await response.json();
-  //       console.log(data);
-  //       setUsers(data);
-  //     } catch (error) {
-  //       setIsError(error.message);
-  //     } finally {
-  //       setIsLoading(false);
-  //     }
-  //   };
+  useEffect(() => {  
+    const fetchData = async () => {
+      try {
+        const response = await fetch(URL);
+        if (!response.ok) {
+          throw new Error("Failed to fetch data");
+        }
+        const data = await response.json();
+        console.log(data);
+        setUsers(data);
+      } catch (error) {
+        setIsError(error.message);
+      } finally {
+        setIsLoading(false);
+      }
+    };
 
-  //   fetchData();
-  // }, []);
+    fetchData();
+  }, []);
 
   return (
     <main>
