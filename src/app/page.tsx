@@ -25,8 +25,8 @@ export default function Home() {
   //         throw new Error("Failed to fetch data");
   //       }
   //       const data = await response.json();
-  //       console.log(data);
-  //       setUsers(data);
+  //       console.log(data); //
+  //       setUsers(data);//
   //     } catch (error) {
   //       setIsError(error.message);
   //     } finally {
