@@ -1,0 +1,136 @@
+// "use client";
+
+// import React, { useState } from "react";
+
+// const GRAPHQL_ENDPOINT = "https://be2-fe-task-us-east-1-staging.dcsdevelopment.me/graphql"; // Replace with actual endpoint
+
+// const CreateCompany = () => {
+//   const [formData, setFormData] = useState({
+//     legalName: "",
+//     industry: "",
+//     website: "",
+//     email: "",
+//   });
+//   const [response, setResponse] = useState(null);
+//   const [error, setError] = useState(null);
+
+//   const handleChange = (e) => {
+//     setFormData({ ...formData, [e.target.name]: e.target.value });
+//   };
+
+//   const createCompany = async (e) => {
+//     e.preventDefault();
+//     setError(null);
+
+//     const mutation = `
+//       mutation CreateCompany($input: UpdateCompanyInput!) {
+//         createCompany(input: $input) {
+//           company {
+//             id
+//             legalName
+//             industry
+//             website
+//             email
+//           }
+//         }
+//       }
+//     `;
+
+//     const variables = {
+//       input: {
+//         legalName: formData.legalName,
+//         industry: formData.industry,
+//         website: formData.website,
+//         email: formData.email,
+//       },
+//     };
+
+//     try {
+//       const res = await fetch(GRAPHQL_ENDPOINT, {
+//         method: "POST",
+//         headers: {
+//           "Content-Type": "application/json",
+//           "apollo-require-preflight": "true",
+//           "x-apollo-operation-name": "CreateCompany",
+//           Authorization: `Bearer YOUR_ACCESS_TOKEN`, // If required
+//         },
+//         body: JSON.stringify({ query: mutation, variables }),
+//       });
+
+//       const data = await res.json();
+//       if (data.errors) {
+//         setError(data.errors[0].message);
+//       } else {
+//         setResponse(data.data.createCompany.company);
+//       }
+//     } catch (err) {
+//       setError("Failed to fetch data");
+//     }
+//   };
+
+//   return (
+//     <div className="p-6 max-w-lg mx-auto bg-white rounded-xl shadow-md">
+//       <h1 className="text-xl font-bold mb-4">Create a Company</h1>
+//       <form onSubmit={createCompany} className="space-y-4">
+//         <input
+//           type="text"
+//           name="legalName"
+//           placeholder="Legal Name"
+//           value={formData.legalName}
+//           onChange={handleChange}
+//           required
+//           className="w-full px-4 py-2 border rounded"
+//         />
+//         <input
+//           type="text"
+//           name="industry"
+//           placeholder="Industry"
+//           value={formData.industry}
+//           onChange={handleChange}
+//           required
+//           className="w-full px-4 py-2 border rounded"
+//         />
+//         <input
+//           type="text"
+//           name="website"
+//           placeholder="Website"
+//           value={formData.website}
+//           onChange={handleChange}
+//           required
+//           className="w-full px-4 py-2 border rounded"
+//         />
+//         <input
+//           type="email"
+//           name="email"
+//           placeholder="Email"
+//           value={formData.email}
+//           onChange={handleChange}
+//           required
+//           className="w-full px-4 py-2 border rounded"
+//         />
+//         <button
+//           type="submit"
+//           className="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600"
+//         >
+//           Submit
+//         </button>
+//       </form>
+
+//       {response && (
+//         <div className="mt-4 p-4 bg-green-100 text-green-700 rounded">
+//           <h3>Company Created:</h3>
+//           <pre>{JSON.stringify(response, null, 2)}</pre>
+//         </div>
+//       )}
+
+//       {error && (
+//         <div className="mt-4 p-4 bg-red-100 text-red-700 rounded">
+//           <h3>Error:</h3>
+//           <p>{error}</p>
+//         </div>
+//       )}
+//     </div>
+//   );
+// };
+
+// export default CreateCompany;
